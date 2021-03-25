@@ -14,23 +14,27 @@
 import UIKit
 
 @propertyWrapper
-struct Default<T: DefaultValue> {
-    var wrappedValue: T.Value
+public struct Default<T: DefaultValue> {
+    public var wrappedValue: T.Value
+
+    public init(wrappedValue: T.Value) {
+        self.wrappedValue = wrappedValue
+    }
 }
 
 extension Default: Codable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         wrappedValue = (try? container.decode(T.Value.self)) ?? T.defaultValue
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(wrappedValue)
     }
 }
 
-protocol DefaultValue {
+public protocol DefaultValue {
     associatedtype Value: Codable
     static var defaultValue: Value{ get }
 }
@@ -47,54 +51,58 @@ extension KeyedEncodingContainer {
    }
 }
 
-extension Int {
+public extension Int {
     enum Zero: DefaultValue {
-        static let defaultValue = 0
+        public static let defaultValue = 0
     }
 }
 
-extension Float {
+public extension Float {
     enum Zero: DefaultValue {
-        static let defaultValue = 0
+        public static let defaultValue = 0
     }
 }
 
-extension Double {
+public extension Double {
     enum Zero: DefaultValue {
-        static let defaultValue = 0
+        public static let defaultValue = 0
     }
 }
 
-extension String {
+public extension String {
     enum Empty: DefaultValue {
-        static let defaultValue = ""
+        public static let defaultValue = ""
     }
 }
 
-extension Bool {
+public extension Bool {
     enum False: DefaultValue {
-        static let defaultValue = false
+        public static let defaultValue = false
     }
 
     enum True: DefaultValue {
-        static let defaultValue = true
+        public static let defaultValue = true
     }
 }
 
 
 // String
 @propertyWrapper
-struct StringAsEmpty {
-    var wrappedValue: String
+public struct StringAsEmpty {
+    public var wrappedValue: String
+
+    public init(wrappedValue: String) {
+        self.wrappedValue = wrappedValue
+    }
 }
 
 extension StringAsEmpty: Codable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         wrappedValue = (try? container.decode(String.self)) ?? ""
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(wrappedValue)
     }
@@ -114,17 +122,21 @@ extension KeyedEncodingContainer {
 
 // Int
 @propertyWrapper
-struct IntAsZero {
-    var wrappedValue: Int
+public struct IntAsZero {
+    public var wrappedValue: Int
+
+    public init(wrappedValue: Int) {
+        self.wrappedValue = wrappedValue
+    }
 }
 
 extension IntAsZero: Codable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         wrappedValue = (try? container.decode(Int.self)) ?? 0
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(wrappedValue)
     }
@@ -144,17 +156,21 @@ extension KeyedEncodingContainer {
 
 // Float
 @propertyWrapper
-struct FloatAsZero {
-    var wrappedValue: Float
+public struct FloatAsZero {
+    public var wrappedValue: Float
+
+    public init(wrappedValue: Float) {
+        self.wrappedValue = wrappedValue
+    }
 }
 
 extension FloatAsZero: Codable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         wrappedValue = (try? container.decode(Float.self)) ?? 0
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(wrappedValue)
     }
@@ -174,17 +190,21 @@ extension KeyedEncodingContainer {
 
 // Double
 @propertyWrapper
-struct DoubleAsZero {
-    var wrappedValue: Double
+public struct DoubleAsZero {
+    public var wrappedValue: Double
+
+    public init(wrappedValue: Double) {
+        self.wrappedValue = wrappedValue
+    }
 }
 
 extension DoubleAsZero: Codable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         wrappedValue = (try? container.decode(Double.self)) ?? 0
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(wrappedValue)
     }
@@ -205,33 +225,42 @@ extension KeyedEncodingContainer {
 
 // Bool
 @propertyWrapper
-struct BoolAsFalse {
-    var wrappedValue: Bool
+public struct BoolAsFalse {
+    public var wrappedValue: Bool
+
+    public init(wrappedValue: Bool) {
+        self.wrappedValue = wrappedValue
+    }
 }
 
 extension BoolAsFalse: Codable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         wrappedValue = (try? container.decode(Bool.self)) ?? false
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(wrappedValue)
     }
 }
 
-struct BoolAsTrue {
-    var wrappedValue: Bool
+@propertyWrapper
+public struct BoolAsTrue {
+    public var wrappedValue: Bool
+    
+    public init(wrappedValue: Bool) {
+        self.wrappedValue = wrappedValue
+    }
 }
 
 extension BoolAsTrue: Codable {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         wrappedValue = (try? container.decode(Bool.self)) ?? true
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(wrappedValue)
     }
