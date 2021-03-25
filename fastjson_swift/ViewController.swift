@@ -12,7 +12,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let json = "{\"ndame\": \"Andy\"}"
+        print(try! JSON.parseObject(json, type: Body.self).name)
+
     }
+
+
+    struct Body: Codable {
+        @BoolAsTrue var name: Bool
+    }
+
 
 
 }

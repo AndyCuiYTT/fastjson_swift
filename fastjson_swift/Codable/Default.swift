@@ -91,8 +91,8 @@ public extension Bool {
 public struct StringAsEmpty {
     public var wrappedValue: String
 
-    public init(wrappedValue: String) {
-        self.wrappedValue = wrappedValue
+    public init() {
+        wrappedValue = ""
     }
 }
 
@@ -110,7 +110,7 @@ extension StringAsEmpty: Codable {
 
 extension KeyedDecodingContainer {
     func decode(_ type: StringAsEmpty.Type, forKey key: Key) throws -> StringAsEmpty {
-        try decodeIfPresent(type, forKey: key) ?? StringAsEmpty(wrappedValue: "")
+        try decodeIfPresent(type, forKey: key) ?? StringAsEmpty()
     }
 }
 
@@ -125,8 +125,8 @@ extension KeyedEncodingContainer {
 public struct IntAsZero {
     public var wrappedValue: Int
 
-    public init(wrappedValue: Int) {
-        self.wrappedValue = wrappedValue
+    public init() {
+        self.wrappedValue = 0
     }
 }
 
@@ -144,7 +144,7 @@ extension IntAsZero: Codable {
 
 extension KeyedDecodingContainer {
     func decode(_ type: IntAsZero.Type, forKey key: Key) throws -> IntAsZero {
-        try decodeIfPresent(type, forKey: key) ?? IntAsZero(wrappedValue: 0)
+        try decodeIfPresent(type, forKey: key) ?? IntAsZero()
     }
 }
 
@@ -159,8 +159,8 @@ extension KeyedEncodingContainer {
 public struct FloatAsZero {
     public var wrappedValue: Float
 
-    public init(wrappedValue: Float) {
-        self.wrappedValue = wrappedValue
+    public init() {
+        self.wrappedValue = 0
     }
 }
 
@@ -178,7 +178,7 @@ extension FloatAsZero: Codable {
 
 extension KeyedDecodingContainer {
     func decode(_ type: FloatAsZero.Type, forKey key: Key) throws -> FloatAsZero {
-        try decodeIfPresent(type, forKey: key) ?? FloatAsZero(wrappedValue: 0)
+        try decodeIfPresent(type, forKey: key) ?? FloatAsZero()
     }
 }
 
@@ -193,8 +193,8 @@ extension KeyedEncodingContainer {
 public struct DoubleAsZero {
     public var wrappedValue: Double
 
-    public init(wrappedValue: Double) {
-        self.wrappedValue = wrappedValue
+    public init() {
+        self.wrappedValue = 0
     }
 }
 
@@ -212,7 +212,7 @@ extension DoubleAsZero: Codable {
 
 extension KeyedDecodingContainer {
     func decode(_ type: DoubleAsZero.Type, forKey key: Key) throws -> DoubleAsZero {
-        try decodeIfPresent(type, forKey: key) ?? DoubleAsZero(wrappedValue: 0)
+        try decodeIfPresent(type, forKey: key) ?? DoubleAsZero()
     }
 }
 
@@ -228,8 +228,8 @@ extension KeyedEncodingContainer {
 public struct BoolAsFalse {
     public var wrappedValue: Bool
 
-    public init(wrappedValue: Bool) {
-        self.wrappedValue = wrappedValue
+    public init() {
+        self.wrappedValue = false
     }
 }
 
@@ -248,9 +248,9 @@ extension BoolAsFalse: Codable {
 @propertyWrapper
 public struct BoolAsTrue {
     public var wrappedValue: Bool
-    
-    public init(wrappedValue: Bool) {
-        self.wrappedValue = wrappedValue
+
+    public init() {
+        self.wrappedValue = true
     }
 }
 
@@ -268,11 +268,11 @@ extension BoolAsTrue: Codable {
 
 extension KeyedDecodingContainer {
     func decode(_ type: BoolAsFalse.Type, forKey key: Key) throws -> BoolAsFalse {
-        try decodeIfPresent(type, forKey: key) ?? BoolAsFalse(wrappedValue: false)
+        try decodeIfPresent(type, forKey: key) ?? BoolAsFalse()
     }
 
     func decode(_ type: BoolAsTrue.Type, forKey key: Key) throws -> BoolAsTrue {
-        try decodeIfPresent(type, forKey: key) ?? BoolAsTrue(wrappedValue: true)
+        try decodeIfPresent(type, forKey: key) ?? BoolAsTrue()
     }
 }
 
