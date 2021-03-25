@@ -15,8 +15,8 @@
 		4B8134CB260C6020008EF270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8134C9260C6020008EF270 /* LaunchScreen.storyboard */; };
 		4B8134D6260C6020008EF270 /* fastjson_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8134D5260C6020008EF270 /* fastjson_swiftTests.swift */; };
 		4B8134E1260C6020008EF270 /* fastjson_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8134E0260C6020008EF270 /* fastjson_swiftUITests.swift */; };
-		4B8134F7260C602A008EF270 /* Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8134F5260C602A008EF270 /* Default.swift */; };
-		4B8134F8260C602A008EF270 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8134F6260C602A008EF270 /* JSON.swift */; };
+		4B813502260C7442008EF270 /* Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B813500260C7442008EF270 /* Default.swift */; };
+		4B813503260C7442008EF270 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B813501260C7442008EF270 /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +51,8 @@
 		4B8134DC260C6020008EF270 /* fastjson_swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fastjson_swiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8134E0260C6020008EF270 /* fastjson_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastjson_swiftUITests.swift; sourceTree = "<group>"; };
 		4B8134E2260C6020008EF270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B8134F5260C602A008EF270 /* Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Default.swift; sourceTree = "<group>"; };
-		4B8134F6260C602A008EF270 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		4B813500260C7442008EF270 /* Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Default.swift; sourceTree = "<group>"; };
+		4B813501260C7442008EF270 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +83,7 @@
 		4B8134B2260C601F008EF270 = {
 			isa = PBXGroup;
 			children = (
+				4B8134FF260C7442008EF270 /* Codable */,
 				4B8134BD260C601F008EF270 /* fastjson_swift */,
 				4B8134D4260C6020008EF270 /* fastjson_swiftTests */,
 				4B8134DF260C6020008EF270 /* fastjson_swiftUITests */,
@@ -103,7 +104,6 @@
 		4B8134BD260C601F008EF270 /* fastjson_swift */ = {
 			isa = PBXGroup;
 			children = (
-				4B8134F4260C602A008EF270 /* Codable */,
 				4B8134BE260C601F008EF270 /* AppDelegate.swift */,
 				4B8134C0260C601F008EF270 /* SceneDelegate.swift */,
 				4B8134C2260C601F008EF270 /* ViewController.swift */,
@@ -133,11 +133,11 @@
 			path = fastjson_swiftUITests;
 			sourceTree = "<group>";
 		};
-		4B8134F4260C602A008EF270 /* Codable */ = {
+		4B8134FF260C7442008EF270 /* Codable */ = {
 			isa = PBXGroup;
 			children = (
-				4B8134F5260C602A008EF270 /* Default.swift */,
-				4B8134F6260C602A008EF270 /* JSON.swift */,
+				4B813500260C7442008EF270 /* Default.swift */,
+				4B813501260C7442008EF270 /* JSON.swift */,
 			);
 			path = Codable;
 			sourceTree = "<group>";
@@ -273,8 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B8134C3260C601F008EF270 /* ViewController.swift in Sources */,
-				4B8134F8260C602A008EF270 /* JSON.swift in Sources */,
-				4B8134F7260C602A008EF270 /* Default.swift in Sources */,
+				4B813503260C7442008EF270 /* JSON.swift in Sources */,
+				4B813502260C7442008EF270 /* Default.swift in Sources */,
 				4B8134BF260C601F008EF270 /* AppDelegate.swift in Sources */,
 				4B8134C1260C601F008EF270 /* SceneDelegate.swift in Sources */,
 			);
