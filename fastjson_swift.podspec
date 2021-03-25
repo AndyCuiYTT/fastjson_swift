@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "fastjson_swift"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.0"
   spec.summary      = "基于 Codable 的 swift JSON 解析库."
 
   # This description is used to generate tags and improve search results.
@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-  用于进行 JSON 与数据模型互相转换
+  基于 Codable 的 swift JSON 解析库.用于进行 JSON 与数据模型互相转换.
                    DESC
 
   spec.homepage     = "https://blog.csdn.net/CuiXg/article/details/115204277"
@@ -46,6 +46,8 @@ Pod::Spec.new do |spec|
   # spec.osx.deployment_target = "10.7"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
+
+  spec.swift_versions = '4.0'
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
