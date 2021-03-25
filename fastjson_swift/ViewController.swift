@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
 
     struct Body: Codable {
-        @BoolAsTrue var name: Bool
+        @Default<Bool.True> var name: Bool
     }
 
 
