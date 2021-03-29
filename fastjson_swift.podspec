@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "fastjson_swift"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0"
   spec.summary      = "基于 Codable 的 swift JSON 解析库."
 
   # This description is used to generate tags and improve search results.
